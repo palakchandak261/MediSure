@@ -126,3 +126,5 @@ windows/
 !assets/
 !web/
 !test/
+# Allow committing the root .env file (override sensitive pattern above)
+!.env
