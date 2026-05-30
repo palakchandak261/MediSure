@@ -627,10 +627,14 @@ class _ResultScreenState extends State<ResultScreen> {
                         ),
                       ),
                       const Spacer(),
-                      if (info['alternatives'] != null && (info['alternatives'] as List).isNotEmpty)
+                      if (info['alternatives'] != null)
                         TextButton(
                           onPressed: () {
-                            _showAlternatives(context, medicine.name, info['alternatives']);
+                            final alts = info['alternatives'];
+                            final altsList = alts is List ? alts : alts is String ? [alts] : [];
+                            if (altsList.isNotEmpty) {
+                              _showAlternatives(context, medicine.name, altsList);
+                            }
                           },
                           style: TextButton.styleFrom(
                             padding: EdgeInsets.zero,
@@ -646,25 +650,7 @@ class _ResultScreenState extends State<ResultScreen> {
                   const SizedBox(height: 8),
                   
                   // Side Effects
-                  if (info['sideEffects'] != null && (info['sideEffects'] as List).isNotEmpty) ...[
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Icon(Icons.info_outline, size: 16, color: Colors.orange.shade700),
-                        const SizedBox(width: 4),
-                        Expanded(
-                          child: Text(
-                            'Side effects: ${(info['sideEffects'] as List).join(', ')}',
-                            style: TextStyle(
-                              color: Colors.orange.shade900,
-                              fontSize: 12,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 8),
-                  ],
+                  ..._buildSideEffectsSection(info),
 
                   // Quick Action Buttons for this medicine
                   Row(
@@ -1538,6 +1524,39 @@ class _ResultScreenState extends State<ResultScreen> {
       default:
         return Colors.green.shade700;
     }
+  }
+
+  List<Widget> _buildSideEffectsSection(Map<String, dynamic> info) {
+    if (info['sideEffects'] == null) return [];
+    
+    final sideEffects = info['sideEffects'];
+    final sideEffectsList = sideEffects is List 
+        ? sideEffects.cast<String>()
+        : sideEffects is String 
+            ? [sideEffects]
+            : <String>[];
+    
+    if (sideEffectsList.isEmpty) return [];
+    
+    return [
+      Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Icon(Icons.info_outline, size: 16, color: Colors.orange.shade700),
+          const SizedBox(width: 4),
+          Expanded(
+            child: Text(
+              'Side effects: ${sideEffectsList.join(", ")}',
+              style: TextStyle(
+                color: Colors.orange.shade900,
+                fontSize: 12,
+              ),
+            ),
+          ),
+        ],
+      ),
+      const SizedBox(height: 8),
+    ];
   }
 }
 

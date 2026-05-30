@@ -291,14 +291,14 @@ class _PriceComparisonScreenState extends State<PriceComparisonScreen> {
                                     ),
                                   ),
                                   title: Text(
-                                    medicine['name'],
+                                    medicine['name'] ?? '',
                                     style: const TextStyle(fontWeight: FontWeight.bold),
                                   ),
-                                  subtitle: Text(medicine['category']),
+                                  subtitle: Text(medicine['category'] ?? ''),
                                   trailing: const Icon(Icons.chevron_right),
                                   onTap: () {
-                                    _searchController.text = medicine['name'];
-                                    _searchMedicine(medicine['name']);
+                                    _searchController.text = medicine['name'] ?? '';
+                                    _searchMedicine(medicine['name'] ?? '');
                                   },
                                 ),
                               );
