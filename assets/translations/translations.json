@@ -1,0 +1,41 @@
+{
+  "English": {
+    "take_medicine": "Take medicine",
+    "twice_daily": "Twice daily",
+    "three_times_daily": "Three times daily",
+    "once_daily": "Once daily",
+    "after_meals": "After meals",
+    "before_meals": "Before meals",
+    "at_bedtime": "At bedtime",
+    "with_water": "With water",
+    "tablet": "Tablet",
+    "capsule": "Capsule",
+    "syrup": "Syrup"
+  },
+  "Hindi": {
+    "take_medicine": "दवा लें",
+    "twice_daily": "दिन में दो बार",
+    "three_times_daily": "दिन में तीन बार",
+    "once_daily": "दिन में एक बार",
+    "after_meals": "खाने के बाद",
+    "before_meals": "खाने से पहले",
+    "at_bedtime": "सोने से पहले",
+    "with_water": "पानी के साथ",
+    "tablet": "गोली",
+    "capsule": "कैप्सूल",
+    "syrup": "सिरप"
+  },
+  "Marathi": {
+    "take_medicine": "औषध घ्या",
+    "twice_daily": "दिवसातून दोनदा",
+    "three_times_daily": "दिवसातून तीनदा",
+    "once_daily": "दिवसातून एकदा",
+    "after_meals": "जेवणानंतर",
+    "before_meals": "जेवणापूर्वी",
+    "at_bedtime": "झोपण्यापूर्वी",
+    "with_water": "पाण्यासोबत",
+    "tablet": "गोळी",
+    "capsule": "कॅप्सूल",
+    "syrup": "सिरप"
+  }
+}

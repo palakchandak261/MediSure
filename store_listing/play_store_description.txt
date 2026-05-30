@@ -1,0 +1,51 @@
+MediSure — AI Prescription Manager & Medicine Reminder
+
+📋 SCAN PRESCRIPTIONS WITH AI
+Take a photo of any prescription and MediSure instantly extracts all medicine names, dosages, and timing instructions using advanced OCR technology. Works offline on Android — no internet needed for scanning.
+
+Supports prescriptions in 7 Indian languages: English, Hindi, Marathi, Tamil, Telugu, Kannada, and Malayalam.
+
+💊 NEVER MISS A DOSE
+Set smart medicine reminders with custom schedules. Get notified at the exact time you need to take your medicine — even when the app is closed. Snooze reminders, track missed doses, and view your 30-day adherence calendar.
+
+🏪 FIND NEARBY PHARMACIES
+Locate pharmacies near you using GPS. Compare medicine prices across Apollo Pharmacy, MedPlus, 1mg, and local stores. Order medicines directly from the app with home delivery.
+
+💳 EASY PAYMENTS
+Pay securely with UPI (GPay, PhonePe, Paytm, BHIM), credit/debit cards, net banking, or cash on delivery. Powered by Razorpay — India's most trusted payment gateway.
+
+📊 TRACK YOUR HEALTH
+• Medicine adherence tracking with streak rewards
+• Health vitals log (BP, sugar, weight, temperature)
+• Drug interaction checker
+• Medicine expiry date tracker
+• Barcode scanner for medicine identification
+
+👨‍👩‍👧 FAMILY HEALTH MANAGEMENT
+Manage prescriptions and reminders for your entire family. Create separate profiles for each family member.
+
+🔒 PRIVACY FIRST
+Your health data stays on your device. No data is shared without your consent. Secure login with encrypted storage.
+
+KEY FEATURES:
+✅ AI-powered prescription OCR (offline on Android)
+✅ Medicine reminders with background notifications
+✅ Nearby pharmacy finder with GPS
+✅ Medicine price comparison
+✅ UPI & Razorpay payment integration
+✅ Drug interaction checker
+✅ Health vitals tracking
+✅ Family profiles
+✅ Medicine expiry tracker
+✅ Barcode scanner
+✅ 7 Indian language support
+✅ Dark mode support
+✅ Works offline
+
+PERMISSIONS USED:
+• Camera — to scan prescription photos
+• Location — to find nearby pharmacies
+• Notifications — for medicine reminders
+• Storage — to save prescription images
+
+MediSure is designed for personal health management. Always consult a qualified doctor before taking any medication.

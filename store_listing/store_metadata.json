@@ -1,0 +1,58 @@
+{
+  "app_name": "MediSure — AI Prescription Manager",
+  "short_description": "Scan prescriptions, set reminders & order medicines",
+  "package_name": "com.example.medisure",
+  "version": "1.0.0",
+  "version_code": 1,
+  "category": "Medical",
+  "content_rating": "Everyone",
+  "target_audience": "18+",
+  "privacy_policy_url": "https://your-domain.com/privacy",
+  "support_email": "support@medisure.app",
+  "website": "https://your-domain.com",
+
+  "play_store": {
+    "category": "MEDICAL",
+    "content_rating": "Everyone",
+    "tags": [
+      "prescription scanner",
+      "medicine reminder",
+      "health tracker",
+      "pharmacy finder",
+      "OCR",
+      "medicine order",
+      "health management",
+      "Indian pharmacy"
+    ],
+    "screenshots_required": {
+      "phone": "2-8 screenshots, 16:9 or 9:16, min 320px, max 3840px",
+      "tablet_7inch": "optional",
+      "tablet_10inch": "optional"
+    },
+    "feature_graphic": "1024x500 PNG or JPEG",
+    "icon": "512x512 PNG (32-bit, no alpha)"
+  },
+
+  "app_store": {
+    "category": "Medical",
+    "age_rating": "4+",
+    "keywords": "prescription,medicine,reminder,pharmacy,OCR,health,doctor,tablet,dosage",
+    "screenshots_required": {
+      "iphone_6_5": "required (1242x2688 or 1284x2778)",
+      "iphone_5_5": "required (1242x2208)",
+      "ipad_pro_12_9": "optional"
+    },
+    "app_preview_video": "optional, 15-30 seconds"
+  },
+
+  "screenshots": {
+    "1_home": "Home screen with quick actions and prescription upload",
+    "2_upload": "Upload prescription screen with camera/gallery options",
+    "3_ocr_result": "OCR result showing extracted medicines with dosages",
+    "4_reminders": "Medicine reminders screen with schedule",
+    "5_pharmacy": "Nearby pharmacy finder with map",
+    "6_payment": "UPI/Razorpay payment screen",
+    "7_adherence": "30-day adherence calendar",
+    "8_health_vitals": "Health vitals tracking screen"
+  }
+}

@@ -1,0 +1,21 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# MediSure — Android Release Signing Configuration
+# ─────────────────────────────────────────────────────────────────────────────
+# HOW TO USE:
+#   1. Generate your keystore (run this command ONCE, save the file safely):
+#
+#      keytool -genkey -v -keystore android/app/medisure-release.jks \
+#        -keyalg RSA -keysize 2048 -validity 10000 \
+#        -alias medisure \
+#        -dname "CN=MediSure, OU=App, O=YourName, L=Mumbai, S=Maharashtra, C=IN"
+#
+#   2. Copy THIS file to android/key.properties (no .template extension)
+#   3. Fill in your actual values below
+#   4. NEVER commit key.properties or the .jks file to Git
+#
+# ─────────────────────────────────────────────────────────────────────────────
+
+storePassword=your_keystore_password_here
+keyPassword=your_key_password_here
+keyAlias=medisure
+storeFile=medisure-release.jks

@@ -1,0 +1,128 @@
+# ── FLUTTER / DART ────────────────────────────────────────────────────────────
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+pubspec.lock
+
+# Build outputs — NEVER commit these
+/build/
+**/build/
+*.dill
+*.dill.d
+app.dill
+hook.dill
+*.stamp
+*.d
+*.bin
+*.map.json
+*.symbols
+
+# Generated files
+*.g.dart
+*.freezed.dart
+*.mocks.dart
+GeneratedPluginRegistrant.java
+GeneratedPluginRegistrant.swift
+
+# ── ANDROID ───────────────────────────────────────────────────────────────────
+**/android/.gradle/
+**/android/app/debug/
+**/android/app/profile/
+**/android/app/release/
+**/android/local.properties
+**/android/key.properties
+**/android/.kotlin/
+android/build/
+
+# ── iOS ───────────────────────────────────────────────────────────────────────
+**/ios/Flutter/.last_build_id
+**/ios/Pods/
+**/ios/.symlinks/
+**/ios/Flutter/Flutter.framework
+**/ios/Flutter/Flutter.podspec
+**/ios/Runner/GeneratedPluginRegistrant.*
+
+# ── macOS ─────────────────────────────────────────────────────────────────────
+**/macos/Flutter/GeneratedPluginRegistrant.swift
+**/macos/Flutter/ephemeral/
+
+# ── Windows ───────────────────────────────────────────────────────────────────
+**/windows/flutter/generated_plugin_registrant.cc
+**/windows/flutter/generated_plugin_registrant.h
+**/windows/flutter/generated_plugins.cmake
+**/windows/flutter/ephemeral/
+
+# ── Web ───────────────────────────────────────────────────────────────────────
+# Keep web/ folder (needed for Flutter web)
+# /web/
+
+# ── IDE ───────────────────────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+*.suo
+*.user
+.vs/
+
+# ── OS ────────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+*.swp
+*.tmp
+*.temp
+
+# ── MISC ──────────────────────────────────────────────────────────────────────
+*.class
+*.pyc
+.atom/
+.buildlog/
+.history
+.svn/
+migrate_working_dir/
+coverage/
+doc/api/
+
+# ── SENSITIVE ─────────────────────────────────────────────────────────────────
+# Never commit secrets
+*.env
+.env.*
+google-services.json
+*firebase-adminsdk*.json
+GoogleService-Info.plist
+keystore.jks
+*.keystore
+*.p12
+*.pem
+
+# ── LARGE DATA FILES ──────────────────────────────────────────────────────────
+pharmacy_full_production_dataset_1200_rows.csv
+PROJECT_DOCUMENTATION.md
+PROJECT_SUMMARY.md
+
+# ── WINDOWS PLATFORM (not needed for Android/Web) ─────────────────────────────
+windows/
+
+# Node.js
+**/node_modules/
+**/logs/
+
+# ── KEEP THESE ────────────────────────────────────────────────────────────────
+!pubspec.yaml
+!lib/
+!android/app/src/
+!android/app/build.gradle.kts
+!android/build.gradle.kts
+!android/settings.gradle.kts
+!android/gradle.properties
+!android/gradlew
+!android/gradlew.bat
+!assets/
+!web/
+!test/

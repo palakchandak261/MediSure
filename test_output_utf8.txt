@@ -1,0 +1,9 @@
+﻿00:00 +0: loading C:/Users/Palak/Downloads/MediSure-main (3)/MediSure-main/test/user_model_test.dart
+00:00 +0: C:/Users/Palak/Downloads/MediSure-main (3)/MediSure-main/test/user_model_test.dart: UserModel serialization and deserialization preserves data
+00:00 +1: C:/Users/Palak/Downloads/MediSure-main (3)/MediSure-main/test/validators_test.dart: Validators validateEmail returns error for empty email
+00:00 +2: C:/Users/Palak/Downloads/MediSure-main (3)/MediSure-main/test/validators_test.dart: Validators validateEmail returns error for invalid email
+00:00 +3: C:/Users/Palak/Downloads/MediSure-main (3)/MediSure-main/test/validators_test.dart: Validators validateEmail returns null for valid email
+00:00 +4: C:/Users/Palak/Downloads/MediSure-main (3)/MediSure-main/test/validators_test.dart: Validators validatePassword requires at least 6 characters
+00:00 +5: C:/Users/Palak/Downloads/MediSure-main (3)/MediSure-main/test/validators_test.dart: Validators validateName requires at least 2 characters
+00:01 +6: C:/Users/Palak/Downloads/MediSure-main (3)/MediSure-main/test/widget_test.dart: basic smoke test
+00:01 +7: All tests passed!

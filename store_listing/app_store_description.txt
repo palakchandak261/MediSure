@@ -1,0 +1,31 @@
+MediSure — AI Prescription Manager
+
+Scan any prescription with your camera and instantly get a structured list of medicines, dosages, and timing — powered by AI OCR technology.
+
+WHAT MAKES MEDISURE DIFFERENT
+MediSure works completely offline on your phone. No internet needed to scan prescriptions. Your health data stays private on your device.
+
+SCAN PRESCRIPTIONS IN SECONDS
+Point your camera at any prescription — handwritten or printed — and MediSure reads it for you. Supports English, Hindi, Marathi, Tamil, Telugu, Kannada, and Malayalam prescriptions.
+
+SMART MEDICINE REMINDERS
+Never miss a dose again. Set reminders for each medicine and get notified at the right time, even when the app is closed. Track your adherence with a 30-day calendar view.
+
+FIND & ORDER MEDICINES
+Locate pharmacies near you, compare prices, and order medicines with home delivery. Pay with UPI, cards, or cash on delivery.
+
+COMPLETE HEALTH TRACKING
+• Blood pressure, sugar, weight, temperature logs
+• Drug interaction checker
+• Medicine expiry date alerts
+• Barcode scanner for medicine info
+• Family health profiles
+
+PRIVACY & SECURITY
+Your health data is encrypted and stored locally. We never sell your data. Secure login with biometric support.
+
+DESIGNED FOR INDIA
+Built specifically for Indian prescriptions, Indian pharmacies, and Indian payment methods (UPI, Razorpay).
+
+---
+Note: MediSure is a health management tool. Always follow your doctor's advice.
