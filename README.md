@@ -1,179 +1,140 @@
-# 💊 MediSure — AI-Powered Prescription Management App
+# 💊 MediSure
 
-> A smart healthcare companion built with Flutter that helps users manage medicines, set reminders, order from nearby pharmacies, and track health vitals.
+MediSure is an open-source Flutter app for prescription management, medicine reminders, ordering from nearby pharmacies, and simple health vitals tracking.
 
----
+This repository is a local copy of the project. Use the instructions below to run the app locally and to push changes to the GitHub repository at https://github.com/palakchandak261/MediSure.
 
-## 📱 Screenshots
-
-| Home Screen | Nearby Pharmacies | Order Tracking |
-|-------------|-------------------|----------------|
-| AI-powered dashboard | Real GPS-based pharmacy finder | Live order status updates |
+**Status:** Development — mobile (Android) and web targets supported.
 
 ---
 
-## ✨ Features
+## Key Features
 
-### 🗺️ Pharmacy & Ordering
-- **Nearby Pharmacies** — Real GPS location, distance, open/closed status
-- **Order Medicines Online** — Cart, delivery address, payment selection
-- **UPI Payment** — QR code scanner with exact amount
-- **Order Tracking** — Live status: Confirmed → Processing → Shipped → Delivered
-- **Price Comparison** — Compare prices across Apollo, MedPlus, 1mg & more
-
-### 🔔 Smart Notifications
-- **Medicine Reminders** — Set exact time, auto popup on any screen
-- **Snooze** — 5 min / 10 min snooze options
-- **Notification Center** — All alerts in one place
-- **Email Notifications** — Order confirmation & delivery updates via Gmail
-
-### 📊 Health Tracking
-- **Medicine Adherence** — 30-day calendar, streaks, percentage
-- **Health Vitals** — Log BP, blood sugar, weight, heart rate
-- **Health Analytics** — Medicine usage trends and insights
-
-### 👨‍👩‍👧 Family & Caregiving
-- **Family Profiles** — Manage medicines for entire family
-- **Emergency Contacts** — Blood group, allergies, chronic conditions
-
-### 💊 Medicine Tools
-- **Prescription Upload** — OCR in 7 Indian languages
-- **Drug Interaction Checker** — Safety warnings with severity levels
-- **Medicine Information** — Side effects, prices, alternatives
-- **Expiry Tracking** — Alerts for expired/expiring medicines
-- **Barcode Scanner** — Verify medicine authenticity
+- Nearby pharmacy discovery (OpenStreetMap/Overpass)
+- Medicine reminders with snooze and adherence tracking
+- Prescription upload with OCR (mobile/web fallback)
+- Order flow with UPI payment support and order tracking
+- Family profiles and health vitals logging
 
 ---
 
-## 🚀 Getting Started
+## Quick Start (Development)
 
-### Prerequisites
-- Flutter SDK 3.10+
-- Dart SDK 3.0+
-- Android Studio / VS Code
-- Chrome (for web) or Android device
+Prerequisites:
 
-### Installation
+- Flutter SDK (>= 3.10)
+- Dart SDK (matching Flutter)
+- Android Studio or VS Code
+- Chrome (for web) or an Android device/emulator
+
+Steps:
 
 ```bash
-# 1. Clone the repository
-git clone https://github.com/ankita12365/MediSure.git
-
-# 2. Navigate to project folder
+# Clone your fork (or change URL to your remote)
+git clone https://github.com/palakchandak261/MediSure.git
 cd MediSure
 
-# 3. Install dependencies
+# Install dependencies
 flutter pub get
 
-# 4. Run on Chrome (Web)
-flutter run -d chrome --web-port=8080 --web-hostname=localhost
+# Run on Chrome (web)
+flutter run -d chrome
 
-# 5. Run on Android
+# Run on connected Android device/emulator
 flutter run -d android
 ```
 
-### Continuous Integration
+If you need to use a remote backend or API keys, see the "Configuration" section below.
 
-This repository includes a GitHub Actions workflow at `.github/workflows/flutter.yml` that runs `flutter analyze` and `flutter test` on pushes and pull requests.
+---
 
-### Remote backend support
+## Configuration
 
-A remote backend can be enabled at runtime using Dart defines. The app also supports optional service keys for backend authorization and external APIs:
+Sensitive values (API keys, backend URLs) should not be committed. Use Dart defines or environment variables during runtime:
 
 ```bash
 flutter run \
   --dart-define=ENABLE_REMOTE_BACKEND=true \
-  --dart-define=BACKEND_BASE_URL=https://api.medisure.com \
-  --dart-define=BACKEND_API_KEY=your_backend_key \
-  --dart-define=MAPS_API_KEY=your_maps_key \
-  --dart-define=OCR_API_KEY=your_ocr_key
+  --dart-define=BACKEND_BASE_URL=https://example.com \
+  --dart-define=BACKEND_API_KEY=your_key \
+  --dart-define=MAPS_API_KEY=your_maps_key
 ```
 
-When remote backend support is enabled, the app uses `BackendService` for auth, prescription sync, secure token storage, and remote order routing. If the remote backend is unavailable, the app can fall back to local secure credentials and stored prescriptions, while still keeping order progress functional offline.
+There is a `backend/` folder containing a Node.js example backend; configure its `.env` before running:
 
-### Remote backend contract
-- `POST /auth/login` → returns `{ user, token }`
-- `POST /auth/register` → returns `{ user, token }`
-- `GET /users/{userId}/prescriptions`
-- `POST /users/{userId}/prescriptions`
-- `DELETE /users/{userId}/prescriptions/{prescriptionId}`
-- `GET /users/{userId}/orders`
-- `POST /orders`
+```powershell
+cd backend
+copy .env.example .env
+# then edit .env to add keys and DB URLs
+```
 
-### UPI and payment configuration
-Use Dart defines for production UPI merchant configuration:
+---
+
+## How to Update This Repo (Git + GitHub)
+
+If you want to push local changes to the GitHub repo `palakchandak261/MediSure`, use these commands.
+
+- If the remote hasn't been set yet (one-time):
+
 ```bash
-flutter run \
-  --dart-define=ENABLE_REMOTE_BACKEND=true \
-  --dart-define=BACKEND_BASE_URL=https://api.medisure.com \
-  --dart-define=BACKEND_API_KEY=your_backend_key \
-  --dart-define=MAPS_API_KEY=your_maps_key \
-  --dart-define=OCR_API_KEY=your_ocr_key \
-  --dart-define=UPI_ID=yourupi@bank \
-  --dart-define=UPI_PAYEE_NAME="MediSure Merchant"
+# set remote to your GitHub repo
+git remote add origin https://github.com/palakchandak261/MediSure.git
+# ensure main is default branch locally
+git branch -M main
+# push and set upstream
+git push -u origin main
 ```
 
-To set CI secrets in GitHub, add `BACKEND_API_KEY`, `MAPS_API_KEY`, `OCR_API_KEY`, `UPI_ID`, and `UPI_PAYEE_NAME` to repository secrets.
+- Common workflow for updates (recommended):
 
-### Real location & pharmacy data
+```bash
+# create a feature branch
+git checkout -b update/readme
 
-The nearby pharmacy feature uses open data from OpenStreetMap and Overpass API for real local pharmacy discovery, plus IP-based and GPS location fallback for web and mobile.
+# stage and commit your changes
+git add README.md
+git commit -m "docs: improve README and setup instructions"
 
-### Test Login
+# push branch to origin
+git push -u origin update/readme
 ```
-Email: test@medisure.com
-Password: MediSure@123
+
+Then open a Pull Request on GitHub from `update/readme` into `main` and request review.
+
+If you prefer to commit directly to `main` locally (not recommended):
+
+```bash
+git add .
+git commit -m "chore: update docs"
+git push origin main
 ```
 
-Remote backend support is optional. The app will use remote auth when enabled, and otherwise fall back to secure local credentials for offline startup readiness.
+If Git rejects pushes due to diverged history, fetch and rebase/merge first:
 
----
-
-## 🛠️ Tech Stack
-
-| Category | Technology |
-|----------|-----------|
-| Framework | Flutter 3.10+ |
-| Language | Dart |
-| State Management | Provider |
-| Local Storage | Hive + SharedPreferences || Secure Credentials | flutter_secure_storage || OCR | Google ML Kit (mobile) + OCR.space (web) |
-| Location | Geolocator + IP-API |
-| Maps | Google Maps (via URL) |
-| Notifications | Custom timer-based system |
-| Email | mailto: deep link |
-| WhatsApp | wa.me deep link |
-| QR Code | qr_flutter |
-
----
-
-## 📁 Project Structure
-
-```
-MediSure/
-├── lib/
-│   ├── core/theme/          # App theme & colors
-│   ├── models/              # Data models
-│   ├── screens/             # All UI screens (17+)
-│   ├── services/            # Business logic (15+)
-│   ├── widgets/             # Reusable components
-│   └── main.dart            # App entry point
-├── android/                 # Android configuration
-├── web/                     # Web configuration
-├── assets/                  # Translations, templates
-├── pubspec.yaml             # Dependencies
-└── README.md
+```bash
+git fetch origin
+git pull --rebase origin main
+# resolve conflicts if any, then
+git push
 ```
 
 ---
 
-## 📧 Contact
+## Contributing
 
-**Developer:** Ankita Chavan  
-**Email:** ankuchavan2202@gmail.com  
-**GitHub:** [@ankita12365](https://github.com/ankita12365)
+- Create an issue for major changes or feature requests.
+- Fork the repository, implement changes on a branch, and open a PR.
+- Follow conventional commits for commit messages (e.g., `feat:`, `fix:`, `docs:`).
 
 ---
 
-## 📄 License
+## Contact
 
-This project is licensed under the MIT License — see [LICENSE](LICENSE) for details.
+If you have questions about running or contributing to this project, open an issue or contact the maintainer via GitHub.
+
+---
+
+## License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+
